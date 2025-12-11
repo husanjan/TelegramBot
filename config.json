@@ -1,0 +1,130 @@
+{
+  "symbols": [
+    {
+      "symbol": "BTCUSDT",
+      "name": "Bitcoin",
+      "emoji": "₿",
+      "intervals": ["15m", "1h", "4h", "1d", "1w"],
+      "priority": 1,
+      "alertThreshold": 0.5
+    },
+    {
+      "symbol": "ETHUSDT",
+      "name": "Ethereum",
+      "emoji": "⟠",
+      "intervals": ["15m", "1h", "4h", "1d", "1w"],
+      "priority": 2,
+      "alertThreshold": 0.5
+    },
+    {
+      "symbol": "SOLUSDT",
+      "name": "Solana",
+      "emoji": "◎",
+      "intervals": ["15m", "1h", "4h", "1d", "1w"],
+      "priority": 3,
+      "alertThreshold": 0.5
+    },
+    {
+      "symbol": "BNBUSDT",
+      "name": "BNB",
+      "emoji": "🔶",
+      "intervals": ["15m", "1h", "4h", "1d", "1w"],
+      "priority": 4,
+      "alertThreshold": 0.5
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "name": "Dogecoin",
+      "emoji": "🐕",
+      "intervals": ["15m", "1h", "4h", "1d", "1w"],
+      "priority": 5,
+      "alertThreshold": 0.5
+    },
+    {
+      "symbol": "LTCUSDT",
+      "name": "Litecoin",
+      "emoji": "Ł",
+      "intervals": ["15m", "1h", "4h", "1d", "1w"],
+      "priority": 6,
+      "alertThreshold": 0.5
+    }
+  ],
+  "intervals": {
+    "15m": {
+      "name": "15 минут",
+      "description": "Скальпинг, быстрая торговля",
+      "checkInterval": "*/15 * * * *",
+      "barsCount": 100
+    },
+    "1h": {
+      "name": "1 час",
+      "description": "Внутридневная торговля",
+      "checkInterval": "0 * * * *",
+      "barsCount": 150
+    },
+    "4h": {
+      "name": "4 часа",
+      "description": "Среднесрочные позиции",
+      "checkInterval": "0 */4 * * *",
+      "barsCount": 150
+    },
+    "1d": {
+      "name": "1 день",
+      "description": "Дневной трейдинг",
+      "checkInterval": "0 9 * * *",
+      "barsCount": 200
+    },
+    "1w": {
+      "name": "1 неделя",
+      "description": "Недельный анализ",
+      "checkInterval": "0 9 * * 1",
+      "barsCount": 100
+    }
+  },
+  "alerts": {
+    "enabled": true,
+    "types": {
+      "poc_touch": {
+        "enabled": true,
+        "message": "🔴 Цена коснулась POC",
+        "threshold": 0.3
+      },
+      "vah_breakout": {
+        "enabled": true,
+        "message": "🟢 Цена пробила VAH",
+        "threshold": 0.2
+      },
+      "val_breakdown": {
+        "enabled": true,
+        "message": "🔵 Цена пробила VAL",
+        "threshold": 0.2
+      },
+      "entering_value_area": {
+        "enabled": true,
+        "message": "🟡 Цена вошла в Value Area",
+        "threshold": 0.1
+      },
+      "leaving_value_area": {
+        "enabled": true,
+        "message": "⚠️ Цена вышла из Value Area",
+        "threshold": 0.1
+      }
+    }
+  },
+  "notifications": {
+    "dailyReport": {
+      "enabled": true,
+      "time": "09:00",
+      "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"]
+    },
+    "hourlyUpdate": {
+      "enabled": false,
+      "symbols": ["BTCUSDT", "ETHUSDT"]
+    }
+  },
+  "settings": {
+    "rowSize": 24,
+    "valueAreaPercent": 70,
+    "minBarsForAlert": 50
+  }
+}
